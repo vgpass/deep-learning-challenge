@@ -40,7 +40,7 @@ In cleaning and preparing the data provided, many assumptions had to be made, as
 
     As stated above, the first attempt chose the *IS_SUCCESFUL* parameter as the target variable. The remaining columns of the dataset were kept as features with some modification. Both *application type* and *classification* were regrouped as discussed below in order to categorize "rare" variables, also referred to as outliers. As seen below, there were a couple of categories that had a limited number of organizations. It was the goal of the team to reduce these inputs to 10 and so created a broader category called *Other* to identify these groups.
 
-![Unique number of featurest](images/nunique.png)
+![Alt text](Deep_Learning_Challenge/images/nunique.png)
 
 * First, any applicaation types that had less than 700 organizations were reclassified as **other**.
 * Second, any classification types with less than 1000 organizations were reclassified as **other**.
@@ -49,7 +49,7 @@ In cleaning and preparing the data provided, many assumptions had to be made, as
 Because of the large number of features involved, a rectified linear unit (ReLU) function was chosen with two(2) hidden layers and eight(8) neurons each. A sigmoid function was used for the output. The model is displayed below.
 <br></br>
 
-![model1](images/model1.png)
+![Alt text](Deep_Learning_Challenge/images/model1.png)
 
 The model produced an accuracy of 72.7%, below the required threshhold for the analysis, but close enough to warrant an attempt at optimizing the model. 
 
@@ -60,9 +60,11 @@ Loss: 0.559209406375885, Accuracy: 0.7273469567298889
 
 We then attempted to optimize the model several times in order to acheive a target predictive accuracy greater than 75%. The initial attempt used the same target and feature variables that were used in the first attempt. However, this model was trained using Keras Tuner in order to evaluate which model could potentially yield better results. The Keras tuner resulted in a model with three hidden layers with 3, 7, and 1 neurons respectively.
 
-![first_opt](images/first_opt_model.png)
+![Alt text](Deep_Learning_Challenge/images/first_opt.png)
 
 Although, the model yielded a slight improvement with 73.9% accuracy, this still fell below the threshhold value of 75%.
+
+![Alt text](Deep_Learning_Challenge/images/first_opt_model.png)
 
 ***Optimization - Subsequent Attempts***
 
@@ -95,8 +97,8 @@ Because of the lack of success using the Keras tuner, it was decided to modify t
 
     This model failed with an accuracy of **72.0%**.
     
-    * 
-    * 
+    * 535/535 - 1s - loss: 0.5743 - accuracy: 0.7200 - 693ms/epoch - 1ms/step
+    * Loss: 0.5743011832237244, Accuracy: 0.7200140357017517
 <br></br>
 
 * ***Attempt #5***
