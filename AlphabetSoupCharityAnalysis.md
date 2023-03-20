@@ -38,7 +38,7 @@ In cleaning and preparing the data provided, many assumptions had to be made, as
 
 ***First Attempt***
 
-    As stated above, the first attempt chose the *IS_SUCCESFUL* parameter as the target variable. The remaining columns of the dataset were kept as features with some modification. Both *application type* and *classification* were regrouped as discussed below in order to categorize "rare" variables, also referred to as outliers. As seen below, there were a couple of categories that had a limited number of organizations. It was the goal of the team to reduce these inputs to 10 and so created a broader category called *Other* to identify these groups.
+As stated above, the first attempt chose the *IS_SUCCESFUL* parameter as the target variable. The remaining columns of the dataset were kept as features with some modification. Both *application type* and *classification* were regrouped as discussed below in order to categorize "rare" variables, also referred to as outliers. As seen below, there were a couple of categories that had a limited number of organizations. It was the goal of the team to reduce these inputs to 10 and so created a broader category called *Other* to identify these groups.
 
 ![Alt text](Deep_Learning_Challenge/images/nunique.png)
 
@@ -113,19 +113,17 @@ Because of the lack of success using the Keras tuner, it was decided to modify t
 
 ## ***SUMMARY***
 
-Transfer learning is a technique used in deep learning to leverage the knowledge learned from a pre-trained model on a related problem, to solve a new, similar problem. The idea behind transfer learning is that a model trained on a large dataset can learn general features that are applicable to many different tasks. These learned features can then be transferred and fine-tuned on a smaller dataset specific to the new task, leading to improved performance.
+Unfortunately, the Alphabet Soup Business Team was unsuccessful in it's attempt to create a deep learning model that it could use to help predict which organizations will be successful in their fundraising attempts. The five optimization models discussed in this report were the best of many attempts, yet all fell short of the 75% threshhold that was the objective of this analysis.
 
-Transfer learning can be applied in different ways, depending on the similarity between the original task and the new task. There are three main approaches to transfer learning:
+Several next steps should be considered.
 
-Feature extraction: In feature extraction, you use the pre-trained model as a fixed feature extractor, where you remove the last layer(s) of the pre-trained model, and add a new layer(s) on top to make predictions on the new dataset. The weights of the original model are frozen, and only the weights of the new layer(s) are trained. This approach is useful when the new task and the original task share similar low-level features, but have different high-level features.
+1. Current data being collected as features should be reconsidered if these are not helpful in creating a model. Just because certain data is easy to measure, collect, and monitor, does not mean that this information is useful in predicting an organization's success. Other features should be considered and tested to see what their predictive power might be. A short list of possibilities could be as follow, though should not be considered the only options.
 
-Fine-tuning: In fine-tuning, you use the pre-trained model as a starting point and fine-tune its weights on the new dataset. You remove the last layer(s) of the pre-trained model, add a new layer(s) on top, and then train the entire model, including the weights of the original layers and the new layer(s). This approach is useful when the new task and the original task share similar high-level features.
+    * Number of employees in the organization.
+    * Amount spent on advertising in the campaign.
+    * Annual marketing budget of the organization.
+    * Location of the organization.
+    * Management style of the organization, i.e. top-down or bottom-up.
+    * Types of media used to conduct the campaign.
 
-Pre-training: In pre-training, you train a model on a large dataset related to the new task, and then fine-tune it on the specific dataset. This approach is useful when there is no pre-trained model available that is similar to the new task.
-
-Transfer learning has several benefits, including:
-
-It allows you to train a model with less data, which is useful when the new task has limited data.
-It can improve the performance of a model, especially when the pre-trained model is trained on a large, diverse dataset.
-It can speed up the training process, as the pre-trained model already has learned some of the low-level features that are useful for the new task.
-Overall, transfer learning is a powerful technique that can be used to improve the accuracy of deep learning models, especially when there is limited data available for training.
+2. The second step that should be considered is using a different model to train and test the data. There are ensemble models, transfer learning, and others. In addition, other optimization algorithms might be attampted such as Adam, RMSprop, or Adagrad. Ensemble models are a way of combining multiple models through various methods such as bagging, where random data points can be selected more than once. Transfer Learning is a technique where the outputs of a model are used to further train a model. Certain learned features can be applied to the next training set and the weights fine-tuned to improve accuracy. These techniques can improve accuracy and sometimes speed up the performance of the model.
