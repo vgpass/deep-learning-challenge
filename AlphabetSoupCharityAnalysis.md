@@ -51,7 +51,7 @@ Because of the large number of features involved, a rectified linear unit (ReLU)
 
 ![Alt text](Deep_Learning_Challenge/images/model1.png)
 
-The model produced an accuracy of 72.7%, below the required threshhold for the analysis, but close enough to warrant an attempt at optimizing the model. 
+The model produced an accuracy of 72.7%, below the required threshold for the analysis, but close enough to warrant an attempt at optimizing the model. 
 
 * 536/536 - 0s - loss: 0.5592 - accuracy: 0.7273 - 463ms/epoch - 865us/step
 Loss: 0.559209406375885, Accuracy: 0.7273469567298889
@@ -62,13 +62,13 @@ We then attempted to optimize the model several times in order to acheive a targ
 
 ![Alt text](Deep_Learning_Challenge/images/first_opt.png)
 
-Although, the model yielded a slight improvement with 73.9% accuracy, this still fell below the threshhold value of 75%.
+Although, the model yielded a slight improvement with 73.9% accuracy, this still fell below the threshold value of 75%.
 
 ![Alt text](Deep_Learning_Challenge/images/first_opt_model.png)
 
 ***Optimization - Subsequent Attempts***
 
-Because of the lack of success using the Keras tuner, it was decided to modify the features being used to train the model. Columns were dropped or binned to account for rare occurences. Different binning strategies were used to see if a better result could be acheived. All attempts are summarized below, but it will be noted that none of them met the 75% threshhold.
+Because of the lack of success using the Keras tuner, it was decided to modify the features being used to train the model. Columns were dropped or binned to account for rare occurences. Different binning strategies were used to see if a better result could be acheived. All attempts are summarized below, but it will be noted that none of them met the 75% threshold.
 <br></br>
 
 * ***Attempt #2***
@@ -113,7 +113,7 @@ Because of the lack of success using the Keras tuner, it was decided to modify t
 
 ## ***SUMMARY***
 
-Unfortunately, the Alphabet Soup Business Team was unsuccessful in it's attempt to create a deep learning model that it could use to help predict which organizations will be successful in their fundraising attempts. The five optimization models discussed in this report were the best of many attempts, yet all fell short of the 75% threshhold that was the objective of this analysis.
+Unfortunately, the Alphabet Soup Business Team was unsuccessful in it's attempt to create a deep learning model that it could use to help predict which organizations will be successful in their fundraising attempts. The five optimization models discussed in this report were the best of many attempts, yet all fell short of the 75% threshold that was the objective of this analysis.
 
 Several next steps should be considered.
 
@@ -127,3 +127,5 @@ Several next steps should be considered.
     * Types of media used to conduct the campaign.
 
 2. The second step that should be considered is using a different model to train and test the data. There are ensemble models, transfer learning, and others. In addition, other optimization algorithms might be attampted such as Adam, RMSprop, or Adagrad. Ensemble models are a way of combining multiple models through various methods such as bagging, where random data points can be selected more than once. Transfer Learning is a technique where the outputs of a model are used to further train a model. Certain learned features can be applied to the next training set and the weights fine-tuned to improve accuracy. These techniques can improve accuracy and sometimes speed up the performance of the model.
+
+In conclusion, although the attempts were unsuccessful, much important information was obtained in the process. These 'lessons' could be used to create more predictive models in the future and could acheive the goal of Alphabet Soup to create a worthwhile tool to increase the foundations effectiveness in supporting charities.
